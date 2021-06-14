@@ -1,0 +1,56 @@
+body {
+    background-color: rgb(240, 234, 214);
+}
+
+.title {
+    text-align: center;
+    font-size: 2em;
+    /* display: inline; */
+    /* margin-inline-end: 100px; */
+    /* width: 40%;
+    float: left; */
+}
+
+/* button.reset {
+    width: 10%;
+    float: right;
+}
+
+button.menu {
+    width: 10%;
+    float: right;
+} */
+div.gameplay {
+    
+}
+
+td {
+    width: 48px;
+    height: 48px;
+    /* width: 10%;
+    height: 10%; */
+    border: 1px solid rgb(240, 234, 214);
+    text-align: center;
+}
+
+.cleanTile {
+    background-color: lightgrey;
+}
+.dirtyTile {
+    background-color: darkgrey;
+}
+
+
+form {
+    /* width: 80%; */
+}
+
+label {
+    /* margin: 2%; */
+    /* width: 100px; */
+}
+
+input {
+    background-color: rgb(234, 228, 208);
+    border: 1px solid black;
+}

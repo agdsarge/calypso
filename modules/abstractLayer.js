@@ -1,8 +1,6 @@
 import store, {Acre} from "./store.js";
-import {neighborBounds} from "./methods.js";
 
 function incrementSurroundings(row, col) {
-    
     for (let r = row-1; r < row+2; r++) {
         if (store.grid[r] == undefined) continue;
         for (let c = col-1; c < col+2; c++) {
@@ -48,6 +46,7 @@ function investigateNeighbors() {
             }
         }
     }
+
 }
 
 export function wipeAbstractLayer() {

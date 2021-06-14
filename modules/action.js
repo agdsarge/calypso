@@ -63,14 +63,26 @@ export function newGame(event, playDiv) {
     drawGame(playDiv);
 }
 
-export function submitCustomGame(custRow, custCol, custMineCount) {
-    store.arenaRows = custRow;
-    store.arenaCols = custCol;
-    store.mineCount = custMineCount;
-    store.display.minesRemaining = custMineCount;
-    newGame();
+
+
+export function generateDTO(form) {
+    const dto = {};
+    for (let [key, value] of new FormData(form)) {
+        dto[key] = value;
+    }
+    return dto;
 }
+
+// export function submitCustomGame(event, custRow, custCol, custMineCount, playDiv) {
+//     event.preventDefault();
+//     store.arenaRows = custRow;
+//     store.arenaCols = custCol;
+//     store.mineCount = custMineCount;
+//     store.display.minesRemaining = custMineCount;
+//     newGame(event, playDiv);
+// }
 
 export function openMenu(){}
 
 export function closeMenu(){}
+

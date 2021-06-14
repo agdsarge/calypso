@@ -1,5 +1,4 @@
 import setup from "./modules/setup.js";
-import store from "./modules/store.js";
 
 const container = () => document.getElementById("container");
 

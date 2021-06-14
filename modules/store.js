@@ -13,6 +13,14 @@ const store = {
     }
 }
 
+export function customGameOptionsSubmission(dto) {
+    // dto is a js object
+    for (let key in dto ) {
+        store[key] = dto[key];
+    }
+
+}
+
 export class Acre {
     constructor(row, col) {
         this.mined = false;
