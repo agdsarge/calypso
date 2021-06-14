@@ -8,7 +8,7 @@ const store = {
     goodClicks: 0,
     display: {
         timer: 0,
-        minesRemaining: null,
+        minesRemaining: 10,
         message: ""
     }
 }
@@ -17,6 +17,9 @@ export function customGameOptionsSubmission(dto) {
     // dto is a js object
     for (let key in dto ) {
         store[key] = dto[key];
+        if (key == mineCount) {
+            store.display.minesRemaining = dto[key];
+        }
     }
 
 }

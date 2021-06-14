@@ -35,12 +35,14 @@ export function buildFrame(container) {
 
 export function drawTitleBar(titleBarDiv, playDiv) {
     let title = createEl(DIV, "title col-3", null, "Calypso");
-    let space = custGap(5);
+    let leftSpace = custGap(1);
+    let display = createEl(DIV, "title col-3", null, store.display.minesRemaining);
+    let rightSpace = custGap(1);
     let newGameBtn = createEl(BUTTON, "reset col-2", null, "New Game");
     newGameBtn.addEventListener(CLICK, (event) => {newGame(event, playDiv)} );
     let menuBtn = createEl(BUTTON, "menu col-2", null, "Menu");
     menuBtn.addEventListener(CLICK, (event) => {drawMenu(playDiv)});
-    [title, space, newGameBtn, menuBtn].forEach(el => {titleBarDiv.appendChild(el)});
+    [title, leftSpace, display, rightSpace, newGameBtn, menuBtn].forEach(el => {titleBarDiv.appendChild(el)});
 }
 
 export function drawGame(playDiv) {

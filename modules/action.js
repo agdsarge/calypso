@@ -1,4 +1,4 @@
-import {drawGame, revelation} from "./build.js";
+import {drawGame, drawTitleBar, revelation} from "./build.js";
 import {delChildren, neighborBounds} from "./methods.js";
 import store from "./store.js";
 import abstractLayer, {wipeAbstractLayer} from "./abstractLayer.js";
@@ -32,14 +32,15 @@ export function leftClick(row, col, playDiv) {
             delChildren(playDiv);
             wipeAbstractLayer();
             abstractLayer();
+            store.display.minesRemaining = store.mineCount;
+            let titleBar = playDiv.parentNode.firstChild;
+            delChildren(titleBar);
+            drawTitleBar(titleBar, playDiv);
             drawGame(playDiv);
         } else {
             delChildren(playDiv)
             drawGame(playDiv);
         }
-        
-        
-        
     }
 }
 
@@ -51,15 +52,25 @@ export function superClick(row, col, playDiv, event) {
 export function rightClick(row, col, playDiv, event) {
     event.preventDefault();
     store.grid[row][col].flagged = !store.grid[row][col].flagged;
+    store.display.minesRemaining -= store.grid[row][col].flagged ? 1 : -1;
+    let titleBar = playDiv.parentNode.firstChild;
+    delChildren(titleBar);
+    drawTitleBar(titleBar, playDiv);
+    
     delChildren(playDiv);
     drawGame(playDiv);
 }
 
 export function newGame(event, playDiv) {
     event.preventDefault();
+    
     wipeAbstractLayer();
     delChildren(playDiv);
     abstractLayer();
+    store.display.minesRemaining = store.mineCount;
+    let titleBar = playDiv.parentNode.firstChild;
+    delChildren(titleBar);
+    drawTitleBar(titleBar, playDiv);
     drawGame(playDiv);
 }
 
