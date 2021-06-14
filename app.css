@@ -1,0 +1,18 @@
+h4.title {
+    display: inline;
+    margin-inline-end: 100px;
+}
+
+td {
+    width: 48px;
+    height: 48px;
+    border: 1px solid white;
+    text-align: center;
+}
+
+.cleanTile {
+    background-color: lightgrey;
+}
+.dirtyTile {
+    background-color: darkgrey;
+}
